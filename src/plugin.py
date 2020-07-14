@@ -116,8 +116,8 @@ class PSNPlugin(Plugin):
 
     async def get_subscriptions(self) -> List[Subscription]:
         is_plus_active = await self._psn_client.get_psplus_status()
-        return [Subscription(PLAYSTATION_PLUS, end_time=None, owned=is_plus_active),
-            Subscription(PLAYSTATION_NOW, None, None, subscription_discovery=SubscriptionDiscovery.USER_ENABLED)]
+        return [Subscription(PLAYSTATION_PLUS, is_plus_active, None),
+            Subscription(PLAYSTATION_NOW, None, None, SubscriptionDiscovery.USER_ENABLED)]
 
     async def get_subscription_games(self, subscription_name: str, context: Any) -> AsyncGenerator[List[SubscriptionGame], None]:
         account_info = await self._psn_client.get_account_info()

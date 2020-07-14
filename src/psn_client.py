@@ -53,8 +53,8 @@ ACCOUNTS_URL = "https://accounts.api.playstation.com/api/v1/accounts/{user_id}"
 DEFAULT_LIMIT = 100
 MAX_TITLE_IDS_PER_REQUEST = 5
 
-PLAYSTATION_PLUS = 'Playstation PLUS'
-PLAYSTATION_NOW = 'Playstation Now'
+PLAYSTATION_PLUS = 'PlayStation PLUS'
+PLAYSTATION_NOW = 'PlayStation Now'
 
 CommunicationId = NewType("CommunicationId", str)
 TitleId = NewType("TitleId", str)
@@ -296,7 +296,7 @@ class PSNClient:
             return [
                 SubscriptionGame(
                     game_id=item['id'].split('-')[1],
-                    game_title=item['name']
+                    game_title=item['attributes']['name']
                 )
                 for item in data['included']
                 if item['type'] in ['game', 'game-related']
