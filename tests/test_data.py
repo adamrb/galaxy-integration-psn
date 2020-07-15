@@ -232,7 +232,8 @@ PSPLUS_GAMES = [
 PSNOW_GAMES = [
     SubscriptionGame(game_title='ABZÛ', game_id='CUSA03349_00'),
     SubscriptionGame(game_title='ADR1FT', game_id='CUSA02572_00'),
-    SubscriptionGame(game_title='Back to Bed', game_id='CUSA02537_00')
+    SubscriptionGame(game_title='Back to Bed', game_id='CUSA02537_00'),
+    SubscriptionGame(game_title='Watch Dogs 2', game_id='CUSA04459_00')
 ]
 
 BACKEND_PSNOW_GAMES = {
@@ -290,7 +291,20 @@ BACKEND_PSNOW_GAMES = {
 			"name": "Back to Bed",
 			"url": "https://commerce1.api.np.km.playstation.net/store/api/ps4now/00_09_000/container/US/en/999/UP2135-CUSA02537_00-BACKTOBEDLOOTPS4/1594138014"
 		}]
-	}]
+	}, {
+		"id": "STORE-MSF192018-APOLLOW",
+		"timestamp": 1594137934000,
+		"revision": 121,
+		"name": "W - Z",
+		"url": "https://commerce1.api.np.km.playstation.net/store/api/ps4now/00_09_000/container/US/en/999/STORE-MSF192018-APOLLOW/1594137934?start=0&size=300&gkb=1&gkb2=1",
+		"games": [{
+			"id": "UP0001-CUSA04459_00-WD2FULLGAME00000",
+			"timestamp": 1594601462000,
+			"revision": 37,
+			"name": "Watch Dogs 2",
+			"url": "https://commerce1.api.np.km.playstation.net/store/api/ps4now/00_09_000/container/US/en/999/UP0001-CUSA04459_00-WD2FULLGAME00000/1594601462"
+		}]
+    }]
 }
 
 BACKEND_STORE_FREEPSPLUS_CONTAINER = {

@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import re
 from datetime import datetime, timezone
 from functools import partial
 from typing import Dict, List, NewType, Tuple
@@ -307,6 +308,7 @@ class PSNClient:
 
     async def get_psnow_games(self, account_info: AccountUserInfo) -> List[SubscriptionGame]:
         logging.debug("Getting PSNow Games")
+        category_pattern = re.compile("^[A-Za-z0-9](?: - [A-Za-z0-9])?$")
         def games_parser(data):
             return [
                 SubscriptionGame(
@@ -314,7 +316,7 @@ class PSNClient:
                     game_title=game['name']
                 )
                 for category in data['categories']
-                if category['name'].isalpha() & len (category['name']) == 1
+                if category_pattern.match(category['name'])
                 for game in category['games']
             ]
 
